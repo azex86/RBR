@@ -144,18 +144,23 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\button.c" />
+    <ClCompile Include="src\keyboard_player.c" />
     <ClCompile Include="src\list.c" />
     <ClCompile Include="src\main.c" />
     <ClCompile Include="src\menu.c" />
     <ClCompile Include="src\play.c" />
+    <ClCompile Include="src\tank.c" />
     <ClCompile Include="src\tool.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header\button.h" />
+    <ClInclude Include="header\keyboard_player.h" />
     <ClInclude Include="header\list.h" />
     <ClInclude Include="header\menu.h" />
     <ClInclude Include="header\play.h" />
+    <ClInclude Include="header\tank.h" />
     <ClInclude Include="header\tool.h" />
+    <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
     <Font Include="res\font\arial.ttf" />
@@ -163,6 +168,10 @@
   <ItemGroup>
     <None Include=".gitignore" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\canon.bmp" />
+    <Image Include="res\tank.bmp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

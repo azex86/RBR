@@ -1,6 +1,14 @@
 #include "../header/play.h"
 #include "../header/button.h"
 
+void drawBackground(SDL_Renderer* renderer)
+{
+	SDL_SetRenderDrawColor(renderer, 113, 230, 249, 255);//cyan
+	SDL_RenderClear(renderer);
+}
+
+
+
 void play(GameSettings settings)
 {
 
@@ -18,6 +26,8 @@ void play(GameSettings settings)
 		fprintf(stderr, "Error : %s", SDL_GetError());
 	}
 
+	Tank* mytank = initTank("res/tank.bmp", "res/canon.bmp", renderer);
+	KeyboardSettings mysettings = {SDLK_RIGHT,SDLK_LEFT,SDLK_SPACE};
 	//Gestion des événements
 	SDL_Event event;
 	while (!quit) {
@@ -38,12 +48,14 @@ void play(GameSettings settings)
 				}
 			}
 			check_all_buttons(&event);
+			keyboardPlayerCheck(mytank, mysettings, &event);
 		}
 
-		SDL_RenderClear(renderer);
+		updateTank(mytank);
+		drawBackground(renderer);
 		
 		draw_all_buttons();
-
+		drawTank(mytank, renderer);
 
 		SDL_RenderPresent(renderer);
 	}

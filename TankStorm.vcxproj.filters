@@ -33,6 +33,12 @@
     <ClCompile Include="src\play.c">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
+    <ClCompile Include="src\tank.c">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="src\keyboard_player.c">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header\menu.h">
@@ -50,6 +56,15 @@
     <ClInclude Include="header\play.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="header\tank.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="header\keyboard_player.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Font Include="res\font\arial.ttf">
@@ -59,5 +74,13 @@
   <ItemGroup>
     <None Include="packages.config" />
     <None Include=".gitignore" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\canon.bmp">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="res\tank.bmp">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
   </ItemGroup>
 </Project>

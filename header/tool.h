@@ -4,6 +4,8 @@
 #include <SDL2/SDL_ttf.h>
 #include <stdlib.h>
 
+typedef unsigned int uint;
+
 struct Gamesettings
 {
     float fps;
