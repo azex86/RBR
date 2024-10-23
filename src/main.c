@@ -2,10 +2,10 @@
 /*
     compilation ligne de commande:
         Linux: 
-            sudo apt-get install libsdl2-dev libsdl2-mixer-dev
-            gcc -lSDL2 -lSDL2_mixer main.c 
+            sudo apt-get install libsdl2-dev libsdl2-mixer-dev libsdl2-ttf-dev
+            gcc -lSDL2 -lSDL2_mixer -lSDL2_ttf main.c 
         Windows:
-            gcc main.c -o prog -I include -L lib -lmingw32 -lSDL2main -lSDL2
+			gcc main.c -o prog -I include -L lib -lmingw32 -lSDL2main -lSDL2 -lSDL2_ttf -lSDL2_mixer
 
 */
 
@@ -99,7 +99,7 @@ int main(int argc, char *argv[]) {
 	}
 
     // Création de la fenêtre
-    settings.window = SDL_CreateWindow("RBR", SDL_WINDOWPOS_UNDEFINED_DISPLAY(screen_id_init), SDL_WINDOWPOS_UNDEFINED_DISPLAY(screen_id_init), screen_width_init, screen_height_init, SDL_WINDOW_SHOWN|SDL_WINDOW_RESIZABLE);
+    settings.window = SDL_CreateWindow("TankStorm", SDL_WINDOWPOS_UNDEFINED_DISPLAY(screen_id_init), SDL_WINDOWPOS_UNDEFINED_DISPLAY(screen_id_init), screen_width_init, screen_height_init, SDL_WINDOW_SHOWN|SDL_WINDOW_RESIZABLE);
     if (settings.window == NULL) {
         printf("Erreur lors de la création de la fenêtre : %s\n", SDL_GetError());
         return 1;
