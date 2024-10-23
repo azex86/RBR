@@ -1,6 +1,9 @@
 #ifndef TOOL_HEADER
 #define TOOL_HEADER
 #include <SDL2/SDL.h>
+#include <SDL2/SDL_ttf.h>
+#include <stdlib.h>
+
 struct Gamesettings
 {
     float fps;
@@ -8,5 +11,9 @@ struct Gamesettings
     SDL_Renderer* renderer;
 };
 typedef struct Gamesettings GameSettings;
+
+extern TTF_Font* global_font;
+void init_font(void);
+
 
 #endif

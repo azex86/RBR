@@ -7,9 +7,14 @@ void menu(GameSettings settings)
     printf("Chargement et affichage du menu ...\n");
     SDL_Renderer* renderer = settings.renderer;
     SDL_Window* window = settings.window;
+    init_font();
+    SDL_SetWindowTitle(window, "Menu");
+
     // Boucle principale
     int quit = 0;
     int iterations = 0;
+
+	Bouton* settings_bouton = init_bouton(renderer, "Settings", 100, 100, 100, 50, NULL);
 
     if(0!=SDL_RenderClear(renderer)){
         fprintf(stderr,"Error : %s",SDL_GetError());
@@ -36,6 +41,7 @@ void menu(GameSettings settings)
                 }
             }
 
+			check_all_buttons(&event);
         }
         
         //On efface tout
@@ -44,7 +50,7 @@ void menu(GameSettings settings)
         SDL_RenderClear(renderer);
 
         //On affiche le menu
-
+        draw_all_buttons();
 
         // Affichage du rendu à l'écran
         SDL_RenderPresent(renderer);        

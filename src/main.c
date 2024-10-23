@@ -93,6 +93,11 @@ int main(int argc, char *argv[]) {
         return 1;
     }
 
+	if (TTF_Init() == -1) {
+		printf("Erreur lors de l'initialisation de SDL_ttf : %s\n", TTF_GetError());
+		return 1;
+	}
+
     // Création de la fenêtre
     settings.window = SDL_CreateWindow("RBR", SDL_WINDOWPOS_UNDEFINED_DISPLAY(screen_id_init), SDL_WINDOWPOS_UNDEFINED_DISPLAY(screen_id_init), screen_width_init, screen_height_init, SDL_WINDOW_SHOWN|SDL_WINDOW_RESIZABLE);
     if (settings.window == NULL) {
@@ -115,7 +120,7 @@ int main(int argc, char *argv[]) {
     SDL_DestroyRenderer(settings.renderer);
     SDL_DestroyWindow(settings.window);
     Mix_CloseAudio();
-
+    TTF_Quit();
     SDL_Quit();
 
     return 0;
