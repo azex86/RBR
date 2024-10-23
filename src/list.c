@@ -49,20 +49,20 @@ uint list_length(list l)
 
 void list_add(list l, void* data, int index)
 {
-	struct Element* new_element = malloc(sizeof(struct Element));
-	if (!new_element)
-	{
-		fprintf(stderr, "Error during memory allocation !\n");
-		return;
-	}
-	new_element->data = data;
 	if (index == -1)
 	{
 		list_add(l, data, l->length);
 	}
 	else
 	{
-
+		struct Element* new_element = malloc(sizeof(struct Element));
+		if (!new_element)
+		{
+			fprintf(stderr, "Error during memory allocation !\n");
+			return;
+		}
+		new_element->data = data;
+		new_element->next = NULL;
 		if (l->first == NULL)
 		{
 			l->first = new_element;

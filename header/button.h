@@ -4,17 +4,28 @@
 #include <SDL2/SDL.h>
 #include "list.h"
 #include "tool.h"
-struct Bouton;
-typedef struct Bouton Bouton;
-
-extern list all_boutons;
+struct Button;
+typedef struct Button Button;
 
 
-Bouton* init_bouton(SDL_Renderer* renderer, char* text, int x, int y, int w, int h, void(*pressed)(void));
-void draw_bouton(Bouton* bouton);
-void check_bouton(Bouton* bouton, SDL_Event* event);
-void free_bouton(Bouton* bouton);
-
+Button* initButton(SDL_Renderer* renderer, char* text, int x, int y, int w, int h, void(*pressed)(void));
+void draw_Button(Button* Button);
+void check_Button(Button* Button, SDL_Event* event);
+void free_Button(Button* Button);
+void freeAllButton(void);
 void check_all_buttons(SDL_Event* event);
 void draw_all_buttons(void);
+
+/*
+* Récupère tous les boutons actifs
+* Et les désactive
+*/
+list takeAllButtons(void);
+
+/*
+* Active tous les boutons de la liste passée en paramètre
+* précondition : aucun bouton n'est actif
+*/
+void pushAllButtons(list buttons);
+
 #endif // ! BUTTON_HEADER
